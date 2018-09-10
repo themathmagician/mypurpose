@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- debounce -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.6/lodash.min.js"></script>
+    <!-- change this to webpack -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div id="techmenu">
+        <img src="techmenu.svg">
+        <header> {{title }}</header>
+        <div>#techmenu is happily governing <b>{{total}}</b> components.
+            <form v-on:submit.prevent="searchComponent">
+                <input id="searchComponent" placeholder="Search for anything ..." v-on:keypress.enter="searchComponent" v-model="search">
+                <button v-on:click="searchComponent" v-bind:disabled="searchButtonDisabled">{{searchStatus}}</button>
+            </form>
+        </div>
+        <input id="addComponent" v-on:keypress.enter="addComponent">
+        <button v-on:click="addComponent"> Add Component</button>
+        <ul>
+            <li v-for="(component,index) in components">
+                <h4>{{component.name | capitalize }}<button v-on:click="removeComponent(index)">X</button></h4>
+                <span>{{component.component}}</span>
+            </li>
+        </ul>
+    </div>
+    <!-- <div id="search">
+    //      <input id="searchPhrase" v-on:keyup.enter="searchPhrase">
+    //      <button v-on:click="searchPhrase">Search</button>
+    //</div>
+-->
+    <div id="status">
+        <header> {{title}}</header>
+        <ul>
+            <li v-for="item in items">
+                <span :class="item.type">{{item.name}}</span>
+            </li>
+        </ul>
+    </div>
+    <div id="taxonomy">
+        <header>{{title}}</header>
+    </div>
+    <div id="searchResults">
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

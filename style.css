@@ -1,0 +1,48 @@
+body {
+  padding: 2em;
+  font-family: sans-serif;
+}
+
+#status {
+  border: 2px solid #ECF0F1;
+  border-radius: 10px;
+  color: #ECF0F1  ;
+}
+
+#status header {
+  display: block;
+  border-radius: 8px 8px 0 0;
+  background: #BDC3C7 ;
+  padding: 10px;
+  color: white;
+  font-size: 1.5em;
+}
+
+#status div {
+  padding: 1em;
+}
+
+#status ul {  
+    list-style-type: none;
+    text-align: center; }
+#status li { 
+  display: inline-block; 
+  padding: 2em; }
+
+#techmenu ul li {
+  padding: 0.25em;
+  border: 1px solid gray;
+  margin: 0.5em 0;
+  border-radius: 3px;
+  list-style-type: none;
+}
+
+.buy, .hold, .maybe, .sell {
+	border-radius: 10px;
+  	padding: 0.5em;
+}
+
+.buy {background-color: #3498DB;}
+.hold {background-color: #2ECC71;}
+.maybe{ background-color: #F1C40F;}
+.sell {background-color: #E74C3C;}
